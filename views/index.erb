@@ -20,6 +20,18 @@
         <div>
           <%= pizza.description %>
         </div>
+        
+        <div>
+          Size: <%= pizza.size %> cm
+        </div>
+
+        <div>
+          Price: <%= pizza.price %> rub
+        </div>
+
+        <div>
+          <button class="btn btn-success btn-sm" onclick="add_to_cart(<%= pizza.id %>)">Add to cart</button>
+        </div>
 
       </div>
       <% end %>
@@ -27,5 +39,8 @@
 
 <br />
 <button class="btn btn-primary" onclick="something()">Click me</button>
+
 </body>
+
+
 </html>
