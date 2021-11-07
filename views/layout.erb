@@ -23,7 +23,7 @@
 		<div class="container">
 
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-inverse" role="navigation">
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			      <span class="sr-only">Toggle navigation</span>
@@ -39,6 +39,16 @@
 			      <li><a href="/something">Something</a></li>
 			      <li><a href="/contacts">Contacts</a></li>
 			    </ul>
+				<ul class="nav navbar-nav navbar-right">
+      				<li>
+					  	<form action="/cart" method="post">
+						  <!--hidden вместо text чтобы скрыть это поле некрасивое -->
+							<input id="orders_input" type="hidden" name="orders" />
+					  		<input id ="orders_button" type="submit" class = "btn btn-primary btn-lg" value="Cart (...)" />
+					  	</form>
+					</li>
+    			</ul>
+
 			  </div><!--/.nav-collapse -->
 			</nav>
 

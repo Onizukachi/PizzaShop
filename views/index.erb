@@ -40,7 +40,21 @@
 <br />
 <button class="btn btn-primary" onclick="something()">Click me</button>
 
+<script type="text/javascript">
+
+$(function() {
+
+  //Js Код ниже который исполнится после загрузки страницы
+  // в поле сверху вставится содержимое localstorage
+
+  //обновить данные отправленные на сервер, localstorage
+  update_orders_input();
+
+  //обновить отображаемое число заказов в корзине
+  update_orders_button()
+});
+
+</script>
+
 </body>
-
-
 </html>
