@@ -31,12 +31,12 @@ function add_to_cart(id){
 function update_orders_input(){
     let orders = cart_get_orders();
     //ОБращаемся к селектору в layout с таким id (orders_input) -(# - означает что обращаемся по id)(. означала бы чтообращаемся по атрибуту класс)
-    //.var устанавливаем значение, (синтаксис JQery)
+    //.val устанавливаем значение, (синтаксис JQery)
     $('#orders_input').val(orders);
 }
 
 function update_orders_button(){
-    //Этот текст (количество товара в корзине) отображаетсяв в navbar
+    //Это число (количество товара в корзине) отображаетсяв в navbar
     let text = 'Cart (' + cart_get_number_of_items() + ')';
 
     $('#orders_button').val(text);
