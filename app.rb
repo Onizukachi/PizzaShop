@@ -17,7 +17,7 @@ class Order < ActiveRecord::Base
 end
 
 before do
-	@items = Product.all
+	@products = Product.all
 end
 
 get '/' do
@@ -34,7 +34,11 @@ post '/cart' do
 
   	@items = parse_orders_input orders_input
 
-	erb "Hello #{@items}"
+	@items.each do |item|
+		item[0] = Product.find(item[0])
+	end 
+
+	erb :cart
 end
 
 def parse_orders_input orders_input
