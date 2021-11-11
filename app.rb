@@ -13,7 +13,9 @@ class Product < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
-
+	validates  :name, presence: true
+	validates :phone, presence: true
+	validates :adress, presence: true
 end
 
 before do
@@ -30,9 +32,9 @@ end
 
 post '/cart' do
 	#Получаем данные из layout где input name = "orders"
-	orders_input = params[:orders]
+	@orders_input = params[:orders]
 
-  	@items = parse_orders_input orders_input
+  	@items = parse_orders_input @orders_input
 
 	@items.each do |item|
 		item[0] = Product.find(item[0])
@@ -40,6 +42,17 @@ post '/cart' do
 
 	erb :cart
 end
+
+post '/place_order' do
+	@s = Order.create params[:order]
+	erb :order_placed
+  end
+
+get '/bookings' do
+	@orders = Order.order('created_at DESC')
+	erb :bookings
+  end
+
 
 def parse_orders_input orders_input
 

@@ -15,6 +15,12 @@ function something()
     alert(x);  
 }
 
+function clear() 
+{   
+    window.localStorage.clear();
+
+}
+
 function add_to_cart(id){
 
     var key = 'product_' + id;
