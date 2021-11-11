@@ -97,3 +97,20 @@ function cart_get_orders() {
     }
     return orders;
 }
+
+function cancel_order(){
+    //Очищаем localstorage
+    window.localStorage.clear();
+
+    //вызываем ниже функции чтоб после нажатия обновилась и кнопка, так как страница уже загружена
+    update_orders_input();
+	update_orders_button();
+
+    //вызываем Jqery, он обращается к селектору(в нашем сдучае div) по id=cart
+    //text.заменяет весь селектор, то есть всю форму отправки на текст
+    $('#cart').text('Your cart is empty');
+    
+    //чтобы пост не отправлялся и страница не переходила на другую
+    return false;    
+
+}
